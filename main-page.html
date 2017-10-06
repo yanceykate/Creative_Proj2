@@ -4,17 +4,13 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 $(document).ready(function() {
-
 $("#searchButton").click(function(e)
 {
 var value1=$("#searchYummly").val();
 var value2=$("#ingredient1").val();
 var value3=$("#ingredient2").val();
 var value4=$("#ingredient3").val();
-console.log(value1);
-console.log(value2);
-console.log(value3);
-console.log(value4);
+var  value_two = "<ul>"; 
 e.preventDefault();
 var myurl="http://api.yummly.com/v1/api/recipes?_app_id=8fad51c4&_app_key=ff12fc0736a84b5df3658d2b5756fcc0&q=";
 myurl+=value1;
@@ -24,43 +20,38 @@ myurl+="&allowedIngredient[]="
 myurl+=value3;
 myurl+="&allowedIngredient[]="
 myurl+=value4;
-
 $.ajax({url:myurl,dataType:"jsonp",success:function(parsed_json)
 {
  var url_two ="http://api.yummly.com/v1/api/recipe/";
-
       var matches = parsed_json['matches'];
                         console.log(matches);
-                        values = "";
+                         var values = "";
+			
                         matches.forEach(function(x) {
   var temp = url_two + x.id + "?_app_id=8fad51c4&_app_key=ff12fc0736a84b5df3658d2b5756fcc0";      
                             values += "<ul>" + temp + "</ul>";
-         
-
 $.ajax({url:temp,dataType:"jsonp",success:function(parsed_json2)
 {
  
-
-      var source = parsed_json2['source'];
-                       console.log(source);
-                       var  value_two = "";
-                   
-      value_two += "<ul>" + x.recipeName + "</ul>";
-                      value_two += "<li><a href=" + source['sourceRecipeUrl'] +" target=\"_blank\">" + source['sourceRecipeUrl']+"</a>"+"</li>";
-      console.log(value_two);   
-      
-      $("#searchResults").html(value_two);
+      var source = parsed_json2['source'];                
+      value_two +="<p>"+ x.recipeName + "</p>";
+	console.log(value_two);
+      value_two += "<li><a href=" + source['sourceRecipeUrl'] +" target=\"_blank\">" + source['sourceRecipeUrl']+"</a>"+"<br><br></li>";
+      console.log("middle"+value_two);
+	value_two+="</ul>";
+	$("#searchResults").html(value_two);
+	
 async: false; 
 }
 
-});
-    });
+}); 
 
+    });
 }
 
 });
-
    });
+
 });
   
 </script>
@@ -106,8 +97,8 @@ async: false;
 	<div id="searchResults"> Results: </div>
 </div>
 <div id="footer">
-	<p>Created By:</p>
-	<p>Copyright</p>
+	<p>Created By:Griff Clawson and Kate Yancey</p>
+	<p>Search powered by Yummly</p>
 </div>
 </body>
 
@@ -119,5 +110,3 @@ async: false;
 
 
 </html>
-
-
