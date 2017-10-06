@@ -1,0 +1,112 @@
+body{
+	background-color:#eff2c0;
+	font-family: "Cooper Black";
+	text-align:center;
+	padding:0px;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	justify-content:center;
+}
+#start_page{
+	margin-top:150px;
+	background-color:#bea57d;
+	text-align:center;
+	z-index:2;
+	height:100%;
+	width:100%;
+	padding:30px;
+	background-image:url("fridge.jpg");
+	background-size:1350px 600px;
+	background-repeat:no-repeat;
+	
+}
+#heading{
+	height:150px;
+	background-color: #d1462f;
+	color:#48392a;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	position:fixed;
+	z-index:3;
+}
+#border{
+	margin-top:150px;
+	height:30px;
+	width:100%;
+	left:0px;
+	right:0px;
+	top:0px;
+	background-image: url("check.jpg");
+	background-repeat: repeat-x;
+	z-index:3;
+	position:fixed;
+	margin-bottom:0px;
+	
+}
+#searching{
+	margin-top:200px;
+	display: inline-block;
+	
+}
+#results_list{
+	background-color:#a4bab7;	
+	margin-left:125px;
+	margin-right:125px;
+	
+}
+#footer{
+	height:50px;
+	background-color:#48392a;
+	text-align:left;
+	margin:0px; 
+	color:white;
+	bottom:0;
+	width:100%;
+}
+h1{
+	font-family:Harrington,Centaur;
+	font-size:72px;
+	text-shadow:2px 2px;
+	color:#080f0f;
+	top:0px;
+	bottom:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+h2{
+	font-size:24px;
+	color:#080f0f;
+}
+h3{
+	font-size:36px;
+}
+#start{
+	background-color:#a4bab7;
+	border:none;
+	color:white;
+	padding:30px;
+	font-size:30px;
+}
+#start:hover{
+	background-color:#d1462f;
+	}
+#searchButton{
+	background-color:#a4bab7;
+	border:none;
+	color:white;
+	padding:15px;
+	font-size:14px;
+}
+#searchButton:hover{
+	background-color:#d1462f;
+}
+#start:hover{
+	background-color:#d1462f;
+	}
+#boxes{
+	display: inline-block;
+}
